@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -60,14 +61,18 @@ public class AddServlet extends HttpServlet {
 		 * also in the CubeServlet we cannot access from getAttribute
 		 * we will have to use getParameter*/
 		
-		//res.sendRedirect("cube?num="+ans);
+		//  res.sendRedirect("cube?num="+ans);
 		
 		/*3. HttpSession -> after taking its instance, use
 		 *  setAttribute to add the value in the session*/
 		
 		
-		HttpSession session = req.getSession();
-		session.setAttribute("num", ans);
+//		HttpSession session = req.getSession();
+//		session.setAttribute("num", ans);
+//		res.sendRedirect("cube");
+		
+		Cookie cookie = new Cookie("num",""+ans);
+		res.addCookie(cookie);
 		res.sendRedirect("cube");
 	}
 }

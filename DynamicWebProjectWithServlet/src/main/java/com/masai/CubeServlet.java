@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,9 +24,17 @@ public class CubeServlet extends HttpServlet {
 		//works when passed in uri like parameter
 		//int cube = Integer.parseInt(request.getParameter("num"));
 		
-		//for httpSession
-		HttpSession htSession  = request.getSession();
-		int cube = (int) htSession.getAttribute("num");
+		// for httpSession
+//		HttpSession htSession  = request.getSession();
+//		int cube = (int) htSession.getAttribute("num");
+		
+		// for Cookie
+		Cookie[] cookies = request.getCookies();
+		int cube=0;
+		for(Cookie c:cookies) {
+			if(c.getName().equals("num"))
+			cube = Integer.parseInt(c.getValue());
+		}
 		
 		cube=cube*cube*cube;
 		
