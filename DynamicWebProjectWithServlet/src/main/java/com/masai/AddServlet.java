@@ -37,7 +37,7 @@ public class AddServlet extends HttpServlet {
 		 * 
 		 * 1. setting attribute in request object (calling a servlet
 		 * from another servlet)
-		 * 2. sendDirect with sending value in uri (uri rewriting)
+		 * 2. sendDirect with sending value in uri
 		 * 3. Session Management
 		 * 4. Cookies*/
 		
@@ -71,11 +71,6 @@ public class AddServlet extends HttpServlet {
 //		session.setAttribute("num", ans);
 //		res.sendRedirect("cube");
 		
-		/*4. Cookie -> adding the value 
-		Cookie(String name, String value ) -> constructs a cookie with a specified name and value.
-		In the redirected side it will get a Cookie[] and we have to check for the cookie name passed
-		from this side
-		*/
 		Cookie cookie = new Cookie("num",""+ans);
 		res.addCookie(cookie);
 		res.sendRedirect("cube");

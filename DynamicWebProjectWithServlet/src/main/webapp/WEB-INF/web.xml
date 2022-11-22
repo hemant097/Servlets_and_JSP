@@ -17,4 +17,29 @@
     <servlet-name>pqr</servlet-name>
     <url-pattern>/cube</url-pattern>
   </servlet-mapping>
+  
+  
+  
+  <servlet>
+    <servlet-name>sconfig</servlet-name>
+    <servlet-class>com.masai.ServletConfigDemo</servlet-class>
+    <init-param>
+    <param-name>city</param-name>
+    <param-value>Kanpur</param-value>
+    </init-param>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>sconfig</servlet-name>
+    <url-pattern>/nameCountry</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+  <param-name>name</param-name>
+  <param-value>Hemant</param-value>
+  </context-param>
+   <context-param>
+  <param-name>country</param-name>
+  <param-value>India</param-value>
+  </context-param>
+  
 </web-app>
