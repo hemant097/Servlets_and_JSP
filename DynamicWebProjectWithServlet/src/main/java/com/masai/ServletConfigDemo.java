@@ -15,7 +15,7 @@ public class ServletConfigDemo extends HttpServlet {
 	
 		PrintWriter out = res.getWriter();
 		
-		//ServletContext is shared among all of the servlets
+		/*ServletContext is shared among all of the servlets, any servlet can use this getServletContext() and get all the init parameters as this method is present in the HttpServlet class */
 		ServletContext sctx = getServletContext(); //req.getServletContext();
 		
 		out.write("Hello friends, my name is "+sctx.getInitParameter("name")+
