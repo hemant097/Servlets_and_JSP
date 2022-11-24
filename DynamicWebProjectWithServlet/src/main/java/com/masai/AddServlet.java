@@ -71,9 +71,9 @@ public class AddServlet extends HttpServlet {
 //		session.setAttribute("num", ans);
 //		res.sendRedirect("cube");
 		/*
-	Cookie -> adding the value 
+4.	Cookie -> add cookie with response from the servlet. 
 		Cookie(String name, String value ) -> constructs a cookie with a specified name and value.
-		In the redirected side it will get a Cookie[] and we have to check for the cookie name passed
+		In the redirected side it will get a Cookie[] from request and we have to check for the cookie name passed
 		from this side
 */
 		Cookie cookie = new Cookie("num",""+ans);
