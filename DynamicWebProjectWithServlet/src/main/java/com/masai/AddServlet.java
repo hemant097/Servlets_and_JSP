@@ -5,12 +5,14 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@WebServlet("/add")
 public class AddServlet extends HttpServlet {
 
 /*we can also use doGet() or doPost() depending upon our requirement
@@ -71,7 +73,7 @@ public class AddServlet extends HttpServlet {
 //		session.setAttribute("num", ans);
 //		res.sendRedirect("cube");
 		/*
-4.	Cookie -> add cookie with response from the servlet. 
+		4.	Cookie -> add cookie with response from the servlet. 
 		Cookie(String name, String value ) -> constructs a cookie with a specified name and value.
 		In the redirected side it will get a Cookie[] from request and we have to check for the cookie name passed
 		from this side
