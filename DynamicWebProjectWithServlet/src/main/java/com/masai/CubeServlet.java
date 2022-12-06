@@ -41,7 +41,12 @@ public class CubeServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
+		out.println("<html><body bgcolor='cyan'>");
+		
+		
 		out.println("The cube of the sum of these numbers is "+cube);
+		
+		out.print("</body></html>");
 	}
 
 	
